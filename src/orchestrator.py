@@ -45,7 +45,7 @@ class ThreatReport:
 class ThreatChainOrchestrator:
     """
     Orchestrates 5 specialized AI agents for continuous threat intelligence.
-    Uses MiMo-V2.5-Pro for long-chain reasoning and pattern recognition.
+    Uses advanced LLM for long-chain reasoning and pattern recognition.
     """
 
     AGENTS = {
@@ -83,12 +83,12 @@ class ThreatChainOrchestrator:
 
     def __init__(
         self,
-        mimo_api_key: str,
-        mimo_base_url: str = "http://localhost:20128/v1",
+        api_key: str,
+        base_url: str = "http://localhost:20128/v1",
         chains: List[str] = None,
     ):
-        self.api_key = mimo_api_key
-        self.base_url = mimo_base_url
+        self.api_key = api_key
+        self.base_url = base_url
         self.chains = chains or ["ethereum", "bsc", "polygon", "solana"]
         self.daily_tokens_used = 0
         self.threats_detected = 0
@@ -159,11 +159,11 @@ class ThreatChainOrchestrator:
             await asyncio.sleep(interval_seconds)
 
     async def _run_agent(self, agent_name: str, prompt: str) -> dict:
-        """Run a single agent with MiMo API via 9Router."""
+        """Run a single agent with AI API via 9Router."""
         agent = self.AGENTS[agent_name]
         self.daily_tokens_used += agent["tokens_per_run"]
 
-        # MiMo API call via 9Router (localhost:20128/v1)
+        # AI API call via 9Router (localhost:20128/v1)
         # Model: xmtp/mimo-v2.5-pro or xmtp/mimo-v2.5
         model = f"xmtp/{agent['model']}"
         
@@ -253,7 +253,7 @@ if __name__ == "__main__":
 
     async def main():
         orchestrator = ThreatChainOrchestrator(
-            mimo_api_key="your-mimo-api-key",
+            api_key="your-api-key",
             chains=["ethereum", "bsc", "polygon", "solana"],
         )
 

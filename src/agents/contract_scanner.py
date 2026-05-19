@@ -1,6 +1,6 @@
 """
 Web3Shield AI — Contract Scanner Agent
-4-pass smart contract vulnerability analysis using MiMo-V2.5-Pro long-chain reasoning.
+4-pass smart contract vulnerability analysis using Advanced LLM long-chain reasoning.
 """
 from dataclasses import dataclass
 
@@ -17,7 +17,7 @@ class Vulnerability:
 class ContractScannerAgent:
     """
     Deep smart contract analysis agent.
-    Uses 4 reasoning passes with MiMo-V2.5-Pro for thorough analysis.
+    Uses 4 reasoning passes with Advanced LLM for thorough analysis.
     Token consumption: ~800K per full audit.
     """
 
@@ -46,8 +46,8 @@ class ContractScannerAgent:
         return f"{base}\nPass {pass_num}: {self.PASS_DESCRIPTIONS[pass_num]}{context}"
 
     async def _reason(self, prompt: str) -> dict:
-        """Execute reasoning via MiMo-V2.5-Pro API."""
-        # MiMo API call with long-chain reasoning enabled
+        """Execute reasoning via Advanced LLM API."""
+        # AI API call with long-chain reasoning enabled
         return {"status": "complete", "findings": []}
 
     def _compile_vulnerabilities(self, results: dict) -> dict:

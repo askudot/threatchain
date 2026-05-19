@@ -103,6 +103,14 @@ export default function Home() {
             <p className="text-xs md:text-sm opacity-80">
               THREAT INTELLIGENCE ON-CHAIN // REAL-TIME MONITORING
             </p>
+            <a 
+              href="https://github.com/moonaskyou/threatchain" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block mt-3 text-xs opacity-60 hover:opacity-100 transition-opacity"
+            >
+              [ VIEW ON GITHUB ]
+            </a>
           </div>
         </header>
 

@@ -1,6 +1,6 @@
 # 🔗 ThreatChain
 
-**Threat Intelligence On-Chain** — Real-time blockchain threat detection and on-chain reputation system powered by MiMo AI.
+**Threat Intelligence On-Chain** — Real-time blockchain threat detection and on-chain reputation system powered by multi-agent AI.
 
 ## 🎯 Mission
 
@@ -24,8 +24,8 @@ ThreatChain transforms reactive security into proactive threat intelligence. Ins
 │  └─────────────────┬───────────────────────────────────┘ │
 │                    │                                      │
 │  ┌─────────────────┴───────────────────────────────────┐ │
-│  │         MiMo-V2.5-Pro API                           │ │
-│  │         (Long-chain Reasoning + Multi-Agent)        │ │
+│  │         Multi-Agent AI Engine                      │ │
+│  │         (Long-chain Reasoning + Analysis)          │ │
 │  └─────────────────────────────────────────────────────┘ │
 │                                                          │
 │  ┌──────────────┐ ┌──────────────┐ ┌─────────────────┐ │
@@ -98,7 +98,7 @@ At 100 active monitors: ~13B tokens/day → ~390B/month
 
 ## 🛠️ Tech Stack
 
-- **AI Models:** MiMo-V2.5-Pro (reasoning), MiMo-V2.5 (analysis)
+- **AI Models:** Advanced LLM (reasoning), Multi-agent orchestration (analysis)
 - **Agent Framework:** Hermes Agent + 9Router
 - **IDE:** Cursor + Claude Code
 - **Blockchain:** Etherscan, BSCScan, Polygonscan, Solana APIs
@@ -143,16 +143,16 @@ interface IThreatChainOracle {
 **Phase 3:** Community intel platform + API  
 **Phase 4:** ML model training + pattern recognition  
 
-🔥 **Seeking MiMo API credits for production-scale threat intelligence.**
+🔥 **Seeking API credits for production-scale threat intelligence deployment.**
 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/askudot/threatchain.git
+git clone https://github.com/moonaskyou/threatchain.git
 cd threatchain
 pip install -r requirements.txt
 cp .env.example .env
-# Add your MiMo API key to .env
+# Add your API keys to .env
 python src/orchestrator.py
 ```
 
@@ -166,4 +166,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-**Built with ❤️ by [askudotid](https://github.com/askudot) | Powered by [MiMo AI](https://xiaomimimo.com)**
+**Built with ❤️ by [moonaskyou](https://github.com/moonaskyou)**

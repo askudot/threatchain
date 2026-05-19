@@ -22,7 +22,7 @@ class ReputationScore:
 class ReputationOracleAgent:
     """
     Calculates reputation scores and publishes to blockchain.
-    Uses MiMo-V2.5 for score calculation and validation.
+    Uses AI model for score calculation and validation.
     Token consumption: ~400K per calculation + publish.
     """
 
@@ -64,7 +64,7 @@ class ReputationOracleAgent:
             + historical_score * self.SCORE_WEIGHTS["historical_behavior"]
         )
 
-        # Use MiMo for final validation and adjustment
+        # Use AI for final validation and adjustment
         validated_score = await self._validate_score(
             address, final_score, threat_feed, patterns, community
         )
@@ -147,7 +147,7 @@ class ReputationOracleAgent:
         self, address: str, score: float, feed: Dict, patterns: Dict, community: Dict
     ) -> float:
         """
-        Use MiMo reasoning to validate and adjust final score.
+        Use AI reasoning to validate and adjust final score.
         Catches edge cases and false positives.
         """
         prompt = f"""
@@ -169,7 +169,7 @@ class ReputationOracleAgent:
         Return: Final validated score (0-100)
         """
 
-        # MiMo API call
+        # AI API call
         # For now, return original score
         return score
 

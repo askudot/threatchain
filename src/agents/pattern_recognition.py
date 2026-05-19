@@ -1,7 +1,7 @@
 """
 ThreatChain — Pattern Recognition Agent
 ML-powered detection of new attack vectors and anomaly patterns.
-Uses MiMo-V2.5-Pro for deep behavioral analysis.
+Uses Advanced LLM for deep behavioral analysis.
 """
 from dataclasses import dataclass
 from typing import List, Dict
@@ -21,7 +21,7 @@ class AnomalyPattern:
 class PatternRecognitionAgent:
     """
     Detects suspicious patterns in smart contracts and transactions.
-    Uses MiMo-V2.5-Pro for multi-pass behavioral analysis.
+    Uses Advanced LLM for multi-pass behavioral analysis.
     Token consumption: ~800K per analysis.
     """
 
@@ -74,7 +74,7 @@ class PatternRecognitionAgent:
     async def _analyze_code_patterns(self, code: str) -> Dict:
         """
         Analyze smart contract code for suspicious patterns.
-        Uses MiMo-V2.5-Pro for deep code reasoning.
+        Uses Advanced LLM for deep code reasoning.
         """
         prompt = f"""
         Analyze this smart contract code for suspicious patterns:
@@ -93,7 +93,7 @@ class PatternRecognitionAgent:
         Return: List of detected patterns with severity and evidence.
         """
 
-        # MiMo API call would go here
+        # AI API call would go here
         return {
             "patterns_found": [],
             "severity": "low",
@@ -106,7 +106,7 @@ class PatternRecognitionAgent:
         Detects: pump & dump, wash trading, coordinated attacks.
         """
         # Fetch transaction history from blockchain API
-        # Analyze patterns using MiMo reasoning
+        # Analyze patterns using AI reasoning
         return {
             "suspicious_transactions": [],
             "pattern_type": None,
@@ -126,7 +126,7 @@ class PatternRecognitionAgent:
 
     async def _correlate_patterns(self, results: Dict, address: str) -> Dict:
         """
-        Cross-correlate all detected patterns using MiMo reasoning.
+        Cross-correlate all detected patterns using AI reasoning.
         Identify attack vectors and calculate overall risk.
         """
         prompt = f"""
@@ -141,7 +141,7 @@ class PatternRecognitionAgent:
         4. Provide evidence-based recommendation
         """
 
-        # MiMo API call
+        # AI API call
         return {
             "primary_threat": "unknown",
             "risk_score": 50,

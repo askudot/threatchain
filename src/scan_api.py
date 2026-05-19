@@ -17,8 +17,8 @@ from src.orchestrator import ThreatChainOrchestrator
 async def scan_address(address: str, chain: str):
     """Scan a single address and return JSON result."""
     orchestrator = ThreatChainOrchestrator(
-        mimo_api_key="test-key",
-        mimo_base_url="http://localhost:20128/v1",
+        api_key="test-key",
+        base_url="http://localhost:20128/v1",
         chains=[chain],
     )
     

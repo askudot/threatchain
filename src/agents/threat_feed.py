@@ -23,7 +23,7 @@ class ThreatIntelligence:
 class ThreatFeedAgent:
     """
     Aggregates threat intelligence from multiple sources.
-    Uses MiMo-V2.5-Pro for cross-source correlation and validation.
+    Uses Advanced LLM for cross-source correlation and validation.
     Token consumption: ~600K per aggregation cycle.
     """
 
@@ -51,7 +51,7 @@ class ThreatFeedAgent:
             if intel:
                 results[source_name] = intel
 
-        # Cross-correlate findings using MiMo reasoning
+        # Cross-correlate findings using AI reasoning
         correlation = await self._correlate_threats(results, address)
 
         return {
@@ -72,13 +72,13 @@ class ThreatFeedAgent:
 
     async def _correlate_threats(self, results: Dict, address: str) -> Dict:
         """
-        Use MiMo-V2.5-Pro to correlate findings across sources.
+        Use Advanced LLM to correlate findings across sources.
         Identify patterns, validate reports, calculate confidence scores.
         """
         if not results:
             return {"threat_detected": False, "confidence": 1.0}
 
-        # MiMo API call for reasoning
+        # AI API call for reasoning
         prompt = f"""
         Analyze threat intelligence for address {address}:
         
