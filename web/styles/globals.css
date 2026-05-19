@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pixel-bg text-pixel-border font-pixel;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer components {
+  .pixel-box {
+    @apply border-4 border-pixel-border bg-pixel-bg shadow-pixel;
+    image-rendering: pixelated;
+  }
+  
+  .pixel-box:hover {
+    @apply shadow-pixel-hover;
+  }
+  
+  .pixel-button {
+    @apply px-6 py-3 border-4 border-pixel-border bg-pixel-bg text-pixel-border;
+    @apply hover:bg-pixel-border hover:text-pixel-bg transition-all;
+    @apply shadow-pixel hover:shadow-pixel-hover;
+    @apply cursor-pointer uppercase text-xs;
+  }
+  
+  .pixel-input {
+    @apply w-full px-4 py-3 border-4 border-pixel-border bg-pixel-bg text-pixel-border;
+    @apply focus:outline-none focus:border-pixel-safe text-xs;
+  }
+  
+  .threat-safe {
+    @apply text-pixel-safe border-pixel-safe;
+  }
+  
+  .threat-low {
+    @apply text-pixel-low border-pixel-low;
+  }
+  
+  .threat-medium {
+    @apply text-pixel-medium border-pixel-medium;
+  }
+  
+  .threat-high {
+    @apply text-pixel-high border-pixel-high;
+  }
+  
+  .threat-critical {
+    @apply text-pixel-critical border-pixel-critical;
+  }
+  
+  .scanline {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scanline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 255, 65, 0.05) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scanline 8s linear infinite;
+  }
+  
+  @keyframes scanline {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  
+  .blink {
+    animation: blink 1s step-start infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
